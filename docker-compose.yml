@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  docs:
+  photoapp:
     build: .
-    container_name: docs
-    image: mg/docs:latest
+    container_name: photoapp
+    image: mg/photoapp:latest
     #command: bash -c "python jobs/manage.py showmigrations && python jobs/manage.py makemigrations core && python jobs/manage.py migrate && python jobs/manage.py runserver 0.0.0.0:8000"
-    command: bash -c "python documents/manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python config/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
